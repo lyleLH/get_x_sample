@@ -7,8 +7,9 @@ class WeatherApi {
     var param = {"appid": "fd5489917aec099715785ebd7593340d", "q": city};
     var response = null;
     try {
-      response =
-          await YKNetWorking.request().get("/weather", queryParameters: param);
+      response = await YKNetWorking.request().get(
+          "http://api.openweathermap.org/data/2.5/weather",
+          queryParameters: param);
     } catch (e) {
       print(e);
     }
