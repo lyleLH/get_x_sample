@@ -18,7 +18,7 @@ class YKNetWorking {
   static Dio request() {
     var _dio;
     _dio = Dio();
-    _dio.options.baseUrl = "http://api.openweathermap.org/data/2.5";
+    // _dio.options.baseUrl = "http://api.openweathermap.org/data/2.5";
     _dio.options.connectTimeout = 5000;
     _dio.options.receiveTimeout = 5000;
     _dio.interceptors.add(
