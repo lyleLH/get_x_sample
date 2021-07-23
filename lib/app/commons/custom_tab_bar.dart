@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get_x_sample/app/modules/home/views/home_view.dart';
+import 'package:get_x_sample/app/modules/repo/view.dart';
 import 'package:get_x_sample/app/routes/app_pages.dart';
 
 class CustomTabbar extends StatefulWidget {
@@ -16,7 +17,7 @@ class _CustomTabbarState extends State<CustomTabbar> {
 
   List<Widget> _widgetOptions = <Widget>[
     HomeView(),
-    HomeView(),
+    RepoPage(),
   ];
   void _onItemTap(int index) {
     setState(() {
