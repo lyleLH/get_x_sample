@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:get_x_sample/app/commons/apis/repo_api.dart';
+import 'package:get_x_sample/app/models/repo_models/repository.dart';
 
 import 'index.dart';
 
@@ -8,6 +10,10 @@ class RepoController extends GetxController {
   /// 响应式成员变量
 
   final state = RepoState();
+
+  searchRepoWithInputText(String text) async {
+    state.repos = await RepoApi.searchRepo(text);
+  }
 
   /// 成员变量
 
