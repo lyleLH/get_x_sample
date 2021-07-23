@@ -14,16 +14,28 @@ class WeatherShowView extends GetView<HomeController> {
             height: 160,
             child: Column(
               children: [
-                Text("${controller.state.weather?.name}"),
-                Text("${controller.state.weather?.sys?.country}"),
+                Text(
+                  "${controller.state.weather?.name ?? ""}",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
+                ),
+                Text(
+                  "${controller.state.weather?.sys?.country ?? ""}",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                        "${DegreeFormate.formateDegreeData(controller.state.weather?.main?.tempMin)} ℃"),
+                      "${DegreeFormate.formateDegreeData(controller.state.weather?.main?.tempMin ?? 0)} ℃",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    ),
                     Text("~"),
                     Text(
-                        "${DegreeFormate.formateDegreeData(controller.state.weather?.main?.tempMax)} ℃"),
+                      "${DegreeFormate.formateDegreeData(controller.state.weather?.main?.tempMax ?? 0)} ℃",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    ),
                   ],
                 )
               ],
